@@ -1,0 +1,40 @@
+// Add your JavaScript code here
+document.addEventListener('DOMContentLoaded', function () {
+    const searchButton = document.getElementById('search-button');
+    const nameInput = document.getElementById('name');
+    const degreeInput = document.getElementById('degree');
+    const yearInput = document.getElementById('year');
+    const resultsDiv = document.getElementById('results');
+
+    searchButton.addEventListener('click', function () {
+        const searchParams = {
+            name: nameInput.value,
+            degree: degreeInput.value,
+            year: yearInput.value
+        };
+
+        // Here you would perform an AJAX request to a backend server to retrieve search results
+        // and then populate the 'resultsDiv' with the retrieved data
+        // For demonstration purposes, let's simulate some results being displayed:
+
+        const dummyResults = [
+            { name: 'John Doe', degree: 'Computer Science', year: '2016' },
+            { name: 'Jane Smith', degree: 'Electrical Engineering', year: '2018' }
+            // Add more dummy results
+        ];
+
+        resultsDiv.innerHTML = ''; // Clear previous results
+
+        dummyResults.forEach(result => {
+            const graduateDiv = document.createElement('div');
+            graduateDiv.classList.add('graduate');
+            graduateDiv.innerHTML = `
+                <h2>${result.name}</h2>
+                <p>Degree: ${result.degree}</p>
+                <p>Year: ${result.year}</p>
+                <!-- Add more details as needed -->
+            `;
+            resultsDiv.appendChild(graduateDiv);
+        });
+    });
+});
