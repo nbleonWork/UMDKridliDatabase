@@ -6,7 +6,7 @@ a:hover {
 
 /*header*/
 header {
-    font-family: 'Montserrat', sans-serif;
+    font-family: sans-serif;
     color: #00274C;
     font-size: 16px;
     font-style: normal;
@@ -14,65 +14,33 @@ header {
 }
 /* Logo placeholder*/
 #logo {
-	float: right;
+	float: top;
 	padding-top: 10px;
-	padding-bottom: 10px;
-	width: 139px;
-	text-align: center;
-	color: #00274C;
-	background-color: rgba(190,190,190,1.00);
+	padding-bottom: 20px;
+	text-align: right;
 }
 
 #search-form{
-	
+	padding-bottom: 20px;
 }
 
-
-/* Main content of the site */
-#content {
-	clear: both;
-	overflow: auto;
-	padding-top: 29px;
-}
 
 
 #name {
 	height: 20px;
 	flex:0 0 200px;
-	margin-left: 10px;
+	margin-left: 5px;
 	transform: scale(1.2);
 	margin-right: 10px;
 	background-color:#EFF0F1;
 }
 
-#degree{
+#degree, #year, #semester{
 	height:20px;
 	flex: 0 0 200px;
 	margin-left: 20px;
 	margin-right: 10px;
 	text-align: center;
-	color:#C5C4C4;
-	background-color:#EFF0F1;
-	transform:scale(1.2);
-}
-
-
-
-#year{
-	height:20px;
-	flex: 0 0 200px;
-	margin-left: 20px;
-	margin-right: 10px;
-	color:#C5C4C4;
-	background-color:#EFF0F1;
-	transform:scale(1.2);
-}
-
-#semester{
-	height:20px;
-	flex: 0 0 200px;
-	margin-left: 20px;
-	margin-right: 10px;
 	color:#C5C4C4;
 	background-color:#EFF0F1;
 	transform:scale(1.2);
@@ -109,49 +77,11 @@ header {
 	padding-left: 10%;
 }
 
-/* Product rows for catalog */
-#content .mainContent .productRow {
-	overflow: auto;
-	color: rgba(146,146,146,1.00);
+.graduate-list{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap:20px;
 }
-/* Each product Information in the catalog */
-.mainContent .productRow .productInfo {
-	float: left;
-	padding-left: 5%;
-	padding-right: 5%;
-	width: 22%;
-}
-/* Prices of a products in catalog */
-.productRow .productInfo .price {
-	font-family: 'Montserrat', sans-serif;
-	color: rgba(146,146,146,1.00);
-	font-size: 22px;
-	position: relative;
-	top: -20px;
-}
-/* Content holder for products in catalog*/
-.productRow .productInfo .productContent {
-	position: relative;
-	top: -37px;
-	font-size: 14px;
-	font-family: source-sans-pro, sans-serif;
-	font-style: normal;
-	font-weight: 200;
-	color: rgba(146,146,146,1.00);
-	white-space: pre-wrap;
-}
-
-
-
-
-/* Product's images in catalog */
-.productInfo div img {
-	width: 100%;
-}
-
-
-
-
 
 /* Media query for tablets */
 @media screen and (max-width:700px) {
