@@ -32,18 +32,29 @@
 	  </select>
 	  
 	  <label for="year"></label>
-	  <select id="year" name="year">
-		  <option value="none"> Graduation Year</option>
-		  <option value="2016"> 2016</option>
-		  <option value="2017"> 2017</option>
-		  <option value="2018"> 2018</option>
-		  <option value="2019"> 2019</option>
-		  <option value="2020"> 2020</option>
-		  <option value="2021"> 2021</option>
-		  <option value="2022"> 2022</option>
-		  <option value="2023"> 2023</option>
+	  <select id="year">
+			<option value="none">Select Year</option>
+			<!-- Call the dynamic function to populate years -->
+			<script>
+				function populateYears() {
+					const currentYear = new Date().getFullYear();
+					const startYear = 2000; // Specify the starting year as needed
+					for (let year = currentYear; year >= startYear; year--) {
+						document.write('<option value="' + year + '">' + year + '</option>');
+					}
+				}
+				populateYears();
+			</script>
 	  </select>
-		  
+		
+	  <label for="semester"></label>
+            <select id="semester">
+                <option value="none">Select Semester</option>
+                <option value="Spring">Spring</option>
+                <option value="Fall">Fall</option>
+				<option value="Summer">Summer</option>
+            </select>
+	  
 	  <button id="search-button">Search</button>
   </div>
 	
@@ -53,3 +64,4 @@
 </div>
 </body>
 </html>
+

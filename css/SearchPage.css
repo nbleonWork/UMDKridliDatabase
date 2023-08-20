@@ -42,6 +42,7 @@ header {
 	margin-left: 10px;
 	transform: scale(1.2);
 	margin-right: 10px;
+	background-color:#EFF0F1;
 }
 
 #degree{
@@ -50,7 +51,8 @@ header {
 	margin-left: 20px;
 	margin-right: 10px;
 	text-align: center;
-	background background-color:#C1C0C0;
+	color:#C5C4C4;
+	background-color:#EFF0F1;
 	transform:scale(1.2);
 }
 
@@ -61,6 +63,18 @@ header {
 	flex: 0 0 200px;
 	margin-left: 20px;
 	margin-right: 10px;
+	color:#C5C4C4;
+	background-color:#EFF0F1;
+	transform:scale(1.2);
+}
+
+#semester{
+	height:20px;
+	flex: 0 0 200px;
+	margin-left: 20px;
+	margin-right: 10px;
+	color:#C5C4C4;
+	background-color:#EFF0F1;
 	transform:scale(1.2);
 }
 
