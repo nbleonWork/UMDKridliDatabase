@@ -121,6 +121,38 @@
 	</div>
 	
 	<script src = "../script.js"></script>
+	
+	<script>
+	//PHP code to embed graduate data
+		<?php
+		$graduateData = [
+			[
+				"name" => "Graduate Name",
+				"photo"=> "grad_photo",
+				"year"=> "2004",
+				"semester"=>"Summer",
+				"major"=>"Computer Science"
+			]
+		];
+		?>
+		//generate graduate profile to add to graduate list
+		function createGraduateElement(graduate){
+			return '
+				
+			
+				';
+		}
+		
+		//update graduate list with created elements
+		function updateGraduateList(){
+			const graduateList = document.querySelector('.graduate-list');
+			
+			$graduateData.forEach(graduate =>{
+				const graduateElement = createGraduateElement(graduate);
+				graduateList.insertAdjacentHTML('beforeend', graduateElement);
+			});
+		}
+	</script>
 </body>
 </html>
 
