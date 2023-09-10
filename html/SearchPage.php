@@ -1,3 +1,23 @@
+<?php
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "webarchive";
+
+if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
+{
+
+    die("failed to connect!");
+
+}
+
+$query = "select * from graduates";
+
+$result = mysqli_query($con, $query);
+
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -65,17 +85,18 @@
 	<div class = "graduate-list">
 	
 		<?php
-			$index = 0;
-		while ($index < 12) {
-			$index += 1;
+		while ($graduate = mysqli_fetch_assoc($result)) {
 			
-			$name = "Graduate";
-			$gradSemester = "Summer";
-			$gradYear = 2004;
-			$major = "Electrical Engineering";
+			$name = $graduate['name'];
+			$gradSemester = $graduate['gradSemester'];
+			$gradYear = $graduate['gradYear'];
+			$major = $graduate['major'];
+			$photoAddress = $graduate['photoAddress'];
+		
+		//following is repeated for each row in the Graduates table
 		?>
 		<div class = "graduate">
-			<img src="../resources/ProfilePlaceholder.png">
+			<img src="<?php echo htmlspecialchars($photoAddress); ?>" width="200" height="300">
 			<h2><?php echo htmlspecialchars($name); ?></h2>
 			<p>Graduated: <?php echo htmlspecialchars($gradSemester); ?> <?php echo htmlspecialchars($gradYear); ?></p>
 			<p>Major: <?php echo htmlspecialchars($major); ?></p>
