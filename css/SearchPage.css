@@ -58,6 +58,10 @@ header {
 	transform:scale(1.2);
 }
 
+#degree{
+	margin-right: 20px;
+}
+
 option{
 	color:#000000;
 }
