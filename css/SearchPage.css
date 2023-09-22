@@ -4,6 +4,10 @@ a:hover {
 	color: rgba(255,255,255,1.00);
 }
 
+body{
+	font-family: 'Nunito Sans', sans-serif;
+}
+
 /*header*/
 header {
     float:top;
@@ -34,7 +38,7 @@ header {
 
 
 #name {
-	height: 15px;
+	height: 14px;
 	flex:0 0 200px;
 	margin-left: 5px;
 	transform: scale(1.2);
