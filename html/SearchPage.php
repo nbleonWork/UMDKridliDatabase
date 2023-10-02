@@ -35,7 +35,7 @@ $result = mysqli_query($con, $query);
     <!-- This is the header content. It contains Logo and links -->
     <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
       <img src="../resources/Header_Logo.png" alt="sample logo">
-		<!-- Company Logo text --> 
+		
        </div>
 </header>
   <div id="search-form">
@@ -48,7 +48,20 @@ $result = mysqli_query($con, $query);
 		  <option value ="artificial-intelligence">Artificial Intelligence</option>
 		  <option value ="bioengineering">Bioengineering</option>
 		  <option value ="cis-mathematics">CIS Mathematics</option>
+		  <option value ="engineering-mathematics">Engineering Mathematics</option>
 		  <option value ="artificial-intelligence">Artificial Intelligence</option>
+		  <option value ="computer-science">Computer Science</option>
+		  <option value ="data-science">Data Science</option>
+		  <option value ="software-engineering">Software Engineering</option>
+		  <option value ="cyber-security">Cybersecurity</option>
+		  <option value ="computer-engineering">Computer Engineering</option>
+		  <option value ="electrical-engineering">Electrical Engineering</option>
+		  <option value ="Industrial-engineering">Industrial Engineering</option>
+		  <option value ="Manufacturing-engineering">Manufacturing Engineering</option>
+		  <option value ="mechanical-engineering">Mechanical Engineering</option>
+		  <option value ="robotics-engineering">Robotics Engineering</option>
+		  <option value ="human-centered-engineering-design">Human Centered Engineering Design</option>
+		  
 	  </select>
 	  
 	  <label for="year"></label>
