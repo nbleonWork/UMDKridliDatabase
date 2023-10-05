@@ -130,12 +130,14 @@ $result = mysqli_query($con, $query);
 		
 		//following is repeated for each row in the Graduates table
 		?>
+		<a href = "profilepage.php?id=<?php echo $graduate['gradID']; ?>" style="color: black; text-decoration: none;">
 		<div class = "graduate">
 			<img src="<?php echo htmlspecialchars($photoAddress); ?>" width="200" height="300">
 			<h2><?php echo htmlspecialchars($name); ?></h2>
 			<p>Graduated: <?php echo htmlspecialchars($gradSemester); ?> <?php echo htmlspecialchars($gradYear); ?></p>
 			<p>Major: <?php echo htmlspecialchars($major); ?></p>
 		</div>
+		</a>
 		<?php
 		}
 		?>
