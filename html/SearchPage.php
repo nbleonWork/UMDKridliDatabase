@@ -12,7 +12,25 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 
 }
 
-$query = "select * from graduates";
+$nameSearch = '';
+$majorSearch = '';
+$yearSearch = '%';
+$semesterSearch = '%';
+
+if (isset($_GET['name']) && $_GET['name'] != '') { 
+	$nameSearch = $_GET['name'];
+}
+if (isset($_GET['degree']) && $_GET['degree'] != 'none') { 
+	$majorSearch = $_GET['degree'];
+}
+if (isset($_GET['year']) && $_GET['year'] != 'none') { 
+	$yearSearch = $_GET['year'];
+}
+if (isset($_GET['semester']) && $_GET['semester'] != 'none') { 
+	$semesterSearch = $_GET['semester'];
+}
+
+$query = "select * from graduates where name like '%$nameSearch%' and major like '%$majorSearch%' and gradYear like '$yearSearch' and gradSemester like '$semesterSearch'";
 
 $result = mysqli_query($con, $query);
 
@@ -38,7 +56,7 @@ $result = mysqli_query($con, $query);
 		
        </div>
 </header>
-  <div id="search-form">
+  <form action="searchpage.php" id="search-form" method ="get">
 	  <label for="name"></label>
 	  <input type="text" id="name" placeholder="Enter Name" name="name">
 	  
@@ -47,17 +65,17 @@ $result = mysqli_query($con, $query);
 		  <option value ="none">Select Degree</option>
 		  <option value ="artificial-intelligence">Artificial Intelligence</option>
 		  <option value ="bioengineering">Bioengineering</option>
-		  <option value ="cis-mathematics">CIS Mathematics</option>
+		  <option value ="CMATH">CIS Mathematics</option>
 		  <option value ="engineering-mathematics">Engineering Mathematics</option>
 		  <option value ="artificial-intelligence">Artificial Intelligence</option>
-		  <option value ="computer-science">Computer Science</option>
+		  <option value ="BSCIS">Computer Science</option>
 		  <option value ="data-science">Data Science</option>
-		  <option value ="software-engineering">Software Engineering</option>
+		  <option value ="BSSE">Software Engineering</option>
 		  <option value ="cyber-security">Cybersecurity</option>
-		  <option value ="computer-engineering">Computer Engineering</option>
-		  <option value ="electrical-engineering">Electrical Engineering</option>
+		  <option value ="BSECE">Computer Engineering</option>
+		  <option value ="BSEEE">Electrical Engineering</option>
 		  <option value ="Industrial-engineering">Industrial Engineering</option>
-		  <option value ="Manufacturing-engineering">Manufacturing Engineering</option>
+		  <option value ="BSEME">Manufacturing Engineering</option>
 		  <option value ="mechanical-engineering">Mechanical Engineering</option>
 		  <option value ="robotics-engineering">Robotics Engineering</option>
 		  <option value ="human-centered-engineering-design">Human Centered Engineering Design</option>
@@ -65,7 +83,7 @@ $result = mysqli_query($con, $query);
 	  </select>
 	  
 	  <label for="year"></label>
-	  <select id="year">
+	  <select id="year" name="year">
 			<option value="none">Select Year</option>
 			<!-- Call the dynamic function to populate years -->
 			<script>
@@ -81,15 +99,15 @@ $result = mysqli_query($con, $query);
 	  </select>
 		
 	  <label for="semester"></label>
-            <select id="semester">
+            <select id="semester" name="semester">
                 <option value="none">Select Semester</option>
-                <option value="Spring">Spring</option>
+                <option value="Winter">Winter</option>
                 <option value="Fall">Fall</option>
 				<option value="Summer">Summer</option>
             </select>
 	  
-	  <button id="search-button">Search</button>
-  </div>
+	  <button type="submit" id="search-button">Search</button>
+  </form>
 	
 	<div class="graduate">
 		
@@ -98,6 +116,9 @@ $result = mysqli_query($con, $query);
 	<div class = "graduate-list">
 	
 		<?php
+		
+		
+		
 		while ($graduate = mysqli_fetch_assoc($result)) {
 			
 			$name = $graduate['name'];
@@ -105,6 +126,7 @@ $result = mysqli_query($con, $query);
 			$gradYear = $graduate['gradYear'];
 			$major = $graduate['major'];
 			$photoAddress = $graduate['photoAddress'];
+			
 		
 		//following is repeated for each row in the Graduates table
 		?>
