@@ -15,7 +15,11 @@
 	</header>
 	
 	<div class="container">
-		<div class="image-container" id ="sliding-container"></div>
+		<div class="image-container" id ="sliding-container">
+		
+		</div>
+		<script src="../scripts/HomePage.js"></script>
+		
 		<div class="sidebar">
 			<form action="searchpage.php" id="search-form" method ="get">
 			<label for="name"></label>
@@ -45,7 +49,7 @@
 			<br>
 			
 			<label for="year"></label>
-	  		<select id="year" name="year">
+	  		<select name="year">
 			<option value="none">Select Year</option>
 			<!-- Call the dynamic function to populate years -->
 			<script>
@@ -72,7 +76,8 @@
 	  		<button type="submit" id="search-button">Search</button>
 			</form>
 		</div>
-	</div>
-	<script src="../scripts/HomePage.js"></script>
+	</div>	
+	
+
 </body>
 </html>
