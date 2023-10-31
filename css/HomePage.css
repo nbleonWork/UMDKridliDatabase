@@ -20,6 +20,14 @@ header{
 	flex:1;
 }
 
+@keyframes slide{
+	from{
+		transform:translateX(0)
+	}
+	to{
+		transform:translateX(-100%)
+	}
+}
 .image-container{
 	flex:2;
 	position:relative;
@@ -27,9 +35,17 @@ header{
 	
 }
 
-.sliding-image{
-	transform:translateX(100%);
-	transition:transform 5s linear;
+.image-container{
+	overflow: hidden;
+}
+
+.image-slide{
+	white-space: nowrap;
+	animation: 5s slide infinite linear;
+}
+
+.image-slide img{
+	height: 70vh;
 }
 
 .sidebar{
