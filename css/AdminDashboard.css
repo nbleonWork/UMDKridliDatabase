@@ -1,0 +1,81 @@
+body {
+            font-family: 'Nunito Sans', sans-serif;
+			
+        }
+
+		.tabs {
+            display: flex;
+            margin-bottom: 20px;
+			background-color:rgba(175,195,219,0.3);
+        }
+
+        .tab {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #3498db;
+            border: 1px solid #ccc;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .tab.active {
+            background-color: #308ACA;
+        }
+
+        .table-container {
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        .popup table {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .popup th, .popup td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .popup button {
+            margin-top: 10px;
+            padding: 8px;
+            cursor: pointer;
+        
+
+
+
+

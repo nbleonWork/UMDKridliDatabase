@@ -6,19 +6,29 @@ body, html{
 	font-family: 'Nunito Sans', sans-serif;
 	background-color: #EFF0F1;
 }
+header
+{
+	float:top;
+	background-color: #00274C;
+    size: auto;
+	width: 100vw;
+	padding:20px;
+	
+	position:absolute;
+	top:0;
+	left:0;
+}
 
 .logo{
-	height:auto;
-	width: 100%;
+	width: 100vw;
 	position:relative;
+	display:block;
 }
 
-.logo img{
-	width: 100%;
-	height:auto;
-}
+
 
 .content{
+	padding-top:15%;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -42,6 +52,7 @@ body, html{
 	background-color:rgba(175,195,219,0.3);
 	
 	border-radius: 10px;
+	z-index:2;
 	
 }
 
@@ -53,17 +64,49 @@ body, html{
 	list-style-type: none;
 }
 
-.popup{
+.bioPopup{
+	display: none;
+	position: absolute;
+	width: 50%;
+    top: 80%;
+    left: 50%;
+	border: 3px solid #f1f1f1;
 	background-color:rgba(175,195,219,0.3);
+	z-index: 9;
 }
-.popup ul{
+.bioPopup ul{
 	list-style-type:none;
 }
 
-.popup textarea
+.bioPopup textarea
 {
-	width: 50%;
+	width: 70%;
 }
+
+.reportPopup{
+	display:none;
+	position: absolute;
+	width: 50%;
+    top: 80%;
+    left: 50%;
+	border: 3px solid #f1f1f1;
+	background-color:rgba(175,195,219,0.3);
+	z-index: 999;
+}
+
+.reportPopup textarea
+{
+	width: 70%;
+}
+
+.reportPopup ul{
+	list-style-type:none;
+}
+
+.popup-content{
+	z-index:999;
+}
+
 #closePopup
 {
 	float: right;

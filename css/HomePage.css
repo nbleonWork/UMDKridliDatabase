@@ -10,12 +10,19 @@ body{
 }
 
 header{
-	width:100%;
-	height:auto;
-	position:relative;
+	 float:top;
+	background-color: #00274C;
+    size: auto;
+	width: 100vw;
+	padding:20px;
+	margin:0;
+	position:absolute;
+	top:0;
+	left:0;
 }
 
 .container{
+	padding-top: 15%;
 	display:flex;
 	flex:1;
 }
