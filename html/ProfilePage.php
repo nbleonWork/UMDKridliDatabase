@@ -45,10 +45,9 @@ $photoAddress = $graduate['photoAddress'];
     
 
    <header>
-		<div class="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
-			<img src="../resources/Header_LogoStretch.jpg" alt="header logo">
-	
-		</div>
+	   <a href = "#" id=logo>		
+			<img src="../resources/Header_Logo.png" alt="header logo">		
+	   </a>
    </header>
 	<div class = "content">
 		<div class="profile">
@@ -69,35 +68,71 @@ $photoAddress = $graduate['photoAddress'];
 			<div class = "miscInfo">
 				<p>Bio: Current occupation, any miscellaneous accomplishments, general career.</p>
 			</div>
-			<button id="editButton">Edit Bio</button>
+			<button id="editButton" onClick="openEditForm()">Edit Bio</button>
+			<button id="reportButton" onClick="openReportForm()">Report</button>
+			
 	
 			
 		</main>
 	</div>
 
-<div class="popup" id= "bioPopup">
+<div class="bioPopup" id= "editBio">
 	<div class = "popup-content">
-		<button type="button" id="closePopup">&times;</button>
+		<button type="button" id="closePopup" onClick="closeEditForm()">&times;</button>
 		<h2>Edit Profile</h2>
 		<form id = "editForm">
-			<label for="contactInfo">Contact Information</label>
-			<ul id="contactInfo">
-				<li>alumni@email.com</li>
-			</ul>
-			<button type = "button" id="addContact">Add Contact</button>
+			<label for="contactInfo">Contact Information:</label>
+			<br>
+			<textarea id="contactInfo">alumni@email.com</textarea>
+			
 			<br>
 			<label for="miscInfo">General Information:</label>
+			<br>
 			<textarea id=miscellaneousInformation name=miscInfo>Bio: Current occupation, any miscellaneous accomplishments, general career.</textarea>
 			<br>
-			<label for "uniqname">Uniqname:</label>
-			<input type = "text" id="uniqname" name = "uniqname" required>
-			<label for "password">Password:</label>
-			<input type = "text" id="password" name = "password" required>
+			
 			<button type = "button" id="submitRevisions">Submit</button>
 		</form>
 	</div>
 	
+	
 </div>
+	
+
+<div class="reportPopup" id= "reportBio">
+	<div class = "popup-content">
+		<button type="button" id="closePopup" onClick="closeReportForm()">&times;</button>
+		<h2>Report Profile</h2>
+		<form id = "reportForm">
+			<label for="reportInfo">What's Wrong?</label>
+			<br>
+			<textarea id=reportInformation name=reportInfo></textarea>
+			<br>
+			
+			<button type = "button" id="submitReport">Submit</button>
+		</form>
+	</div>
+	</div>
+
+<script>
+	function openEditForm() {
+		document.getElementById("editBio").style.display = "block";
+	}
+	
+	function closeEditForm() {
+		document.getElementById("editBio").style.display = "none";
+	}
+	
+	function openReportForm() {
+		document.getElementById("reportBio").style.display = "block";
+	}
+	
+	function closeReportForm() {
+		document.getElementById("reportBio").style.display = "none";
+	}
+	
+	
+</script>	
 	
 </body>
 </html>
