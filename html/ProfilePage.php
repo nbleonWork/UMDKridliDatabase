@@ -36,7 +36,7 @@ $photoAddress = $graduate['photoAddress'];
 
 
 //set default bio information
-$bioID = 1;
+$bioID = -1;
 $foundContactInfo = "alumni@email.com";
 $foundMiscInfo = "Current occupation, any miscellaneous accomplishments, general career.";
 
@@ -60,19 +60,19 @@ if ($bio = mysqli_fetch_assoc($result)) {
 
 $query = "";
 
+//contactInfo is set from this page being navigated to; implies that a bio was submitted
 if (isset($_GET['contactInfo'])) {
-	$contactInfo = $_GET['contactInfo'];
-	$miscInfo = $_GET['miscInfo'];
+	$contactInfo = mysqli_real_escape_string($con, $_GET['contactInfo']);
+	$miscInfo = mysqli_real_escape_string($con, $_GET['miscInfo']);
 	$query = "insert into bios (gradID, contactInfo, miscInfo, approvalStatus) values ('$gradID', '$contactInfo', '$miscInfo', 0);";
 }
 
-if (isset($_GET['reportInfo'])) {
-	//$miscInfo = $_GET['miscInfo'];
-	//$query = "insert into reports (gradID, contactInfo, miscInfo, approvalStatus) values ('$gradID', '$contactInfo', '$miscInfo', 0);";
+if (isset($_GET['reportInfo']) && $bioID > -1) {
+	$reportInfo = mysqli_real_escape_string($con, $_GET['reportInfo']);
+	$query = "insert into reports (bioID, reportContent, isSolved) values ('$bioID', '$reportInfo', 0);";
 }
 
 if ($query != "") {
-	echo $query;
 	$result = mysqli_query($con, $query);
 }
 
@@ -112,11 +112,11 @@ if ($query != "") {
 			</div>
 			<div class= "contactInfo"></div>
 				<ul id="contactList">
-					<li><?php echo $foundContactInfo; ?></li>
+					<li><?php echo htmlspecialchars($foundContactInfo); ?></li>
 				</ul>
 				
 			<div class = "miscInfo">
-				<p>Bio: <?php echo $foundMiscInfo; ?></p>
+				<p>Bio: <?php echo htmlspecialchars($foundMiscInfo); ?></p>
 			</div>
 			<button id="editButton" onClick="openEditForm()">Edit Bio</button>
 			<button id="reportButton" onClick="openReportForm()">Report</button>

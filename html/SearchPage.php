@@ -18,16 +18,16 @@ $yearSearch = '%';
 $semesterSearch = '%';
 
 if (isset($_GET['name']) && $_GET['name'] != '') { 
-	$nameSearch = $_GET['name'];
+	$nameSearch = mysqli_real_escape_string($con, $_GET['name']);
 }
 if (isset($_GET['degree']) && $_GET['degree'] != 'none') { 
-	$majorSearch = $_GET['degree'];
+	$majorSearch = mysqli_real_escape_string($con, $_GET['degree']);
 }
 if (isset($_GET['year']) && $_GET['year'] != 'none') { 
-	$yearSearch = $_GET['year'];
+	$yearSearch = mysqli_real_escape_string($con, $_GET['year']);
 }
-if (isset($_GET['semester']) && $_GET['semester'] != 'none') { 
-	$semesterSearch = $_GET['semester'];
+if (isset($_GET['semester']) && $_GET['semester'] != 'none') {
+	$semesterSearch = mysqli_real_escape_string($con, $_GET['semester']);
 }
 
 $query = "select * from graduates where name like '%$nameSearch%' and major like '%$majorSearch%' and gradYear like '$yearSearch' and gradSemester like '$semesterSearch'";
