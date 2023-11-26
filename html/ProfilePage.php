@@ -74,6 +74,9 @@ if (isset($_GET['reportInfo']) && $bioID > -1) {
 
 if ($query != "") {
 	$result = mysqli_query($con, $query);
+	//remove when testing GET variables
+	
+	header("location: profilepage.php?id=$gradID");
 }
 
 
@@ -94,7 +97,7 @@ if ($query != "") {
     
 
    <header>
-	   <a href = "#" id=logo>		
+	   <a href = "homepage.php" id=logo>		
 			<img src="../resources/Header_Logo.png" alt="header logo">		
 	   </a>
    </header>

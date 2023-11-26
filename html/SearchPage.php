@@ -51,10 +51,11 @@ $result = mysqli_query($con, $query);
 <div id="mainWrapper">
   <header> 
     <!-- This is the header content. It contains Logo and links -->
-    <div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
-      <img src="../resources/Header_Logo.png" alt="sample logo">
-		
-       </div>
+	<a href = "homepage.php" id=logo>	
+		<div id="logo"> <!-- <img src="logoImage.png" alt="sample logo"> --> 
+			<img src="../resources/Header_Logo.png" alt="sample logo">
+		</div>
+	</a>
 </header>
   <form action="searchpage.php" id="search-form" method ="get">
 	  <label for="name"></label>
