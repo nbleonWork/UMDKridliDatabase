@@ -15,8 +15,6 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 $query = "select * from graduates order by rand() limit 12";
 
 $result = mysqli_query($con, $query);
-
-echo mysqli_num_rows($result);
 ?>
 
 <!doctype html>
