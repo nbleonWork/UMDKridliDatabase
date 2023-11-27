@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2023 at 12:19 AM
+-- Generation Time: Nov 27, 2023 at 03:12 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -34,17 +34,6 @@ CREATE TABLE `bios` (
   `miscInfo` varchar(1000) NOT NULL,
   `approvalStatus` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `bios`
---
-
-INSERT INTO `bios` (`bioID`, `gradID`, `contactInfo`, `miscInfo`, `approvalStatus`) VALUES
-(1, 1, '', 'this is a false result: not approved', 0),
-(2, 1, 'false', 'this is a false result: comes before', 1),
-(3, 1, 'testcontact@gmail', 'this is a test bio\r\n\r\n\r\nthere\'s two lines of space above\r\n\r\none line above', 1),
-(8, 1, 'testinput@gmail\r\ntestline2', 'inputted bio myself\r\nnew line\r\ntest', 1),
-(9, 1, 'testinput@gmail\r\ntestline2', 'inputted bio myself\r\nnew line\r\ntest', 0);
 
 -- --------------------------------------------------------
 
@@ -83,13 +72,30 @@ INSERT INTO `graduates` (`gradID`, `name`, `gradYear`, `gradSemester`, `major`, 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `password`
+--
+
+CREATE TABLE `password` (
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `password`
+--
+
+INSERT INTO `password` (`password`) VALUES
+('testpassword');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `reports`
 --
 
 CREATE TABLE `reports` (
   `reportID` int(11) NOT NULL,
   `bioID` int(11) NOT NULL,
-  `reportContent` int(11) NOT NULL,
+  `reportContent` varchar(500) NOT NULL,
   `isSolved` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -125,7 +131,7 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT for table `bios`
 --
 ALTER TABLE `bios`
-  MODIFY `bioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `bioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `graduates`
@@ -137,7 +143,7 @@ ALTER TABLE `graduates`
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `reportID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `reportID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
