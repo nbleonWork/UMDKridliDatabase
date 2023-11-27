@@ -118,15 +118,16 @@ $result = mysqli_query($con, $query);
 	
 		<?php
 		
-		
-		
-		while ($graduate = mysqli_fetch_assoc($result)) {
+		if (mysqli_num_rows($result) > 0) {
 			
-			$name = $graduate['name'];
-			$gradSemester = $graduate['gradSemester'];
-			$gradYear = $graduate['gradYear'];
-			$major = $graduate['major'];
-			$photoAddress = $graduate['photoAddress'];
+		
+			while ($graduate = mysqli_fetch_assoc($result)) {
+			
+				$name = $graduate['name'];
+				$gradSemester = $graduate['gradSemester'];
+				$gradYear = $graduate['gradYear'];
+				$major = $graduate['major'];
+				$photoAddress = $graduate['photoAddress'];
 			
 		
 		//following is repeated for each row in the Graduates table
@@ -140,6 +141,9 @@ $result = mysqli_query($con, $query);
 		</div>
 		</a>
 		<?php
+			}
+		} else {
+			echo "No results found.";
 		}
 		?>
 	</div>
