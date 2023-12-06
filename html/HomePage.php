@@ -12,7 +12,7 @@ if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 
 }
 
-$query = "select * from graduates order by rand() limit 12";
+$query = "select * from graduates order by rand() limit 100";
 
 $result = mysqli_query($con, $query);
 ?>
@@ -35,7 +35,7 @@ $result = mysqli_query($con, $query);
 	
 	<div class="container">
 		<div class="image-container">
-			<div class = "image-slide">
+			<div class="image-slide">
 				<!-- images go here-->
 				<?php
 				while ($grad = mysqli_fetch_assoc($result)) {
@@ -59,22 +59,14 @@ $result = mysqli_query($con, $query);
 			<label for="degree"></label>
 	  		<select id="degree" name="degree">
 		  		<option value ="none">Select Degree</option>
-				<option value ="artificial-intelligence">Artificial Intelligence</option>
-				<option value ="bioengineering">Bioengineering</option>
 				<option value ="CMATH">CIS Mathematics</option>
-				<option value ="engineering-mathematics">Engineering Mathematics</option>
-				<option value ="artificial-intelligence">Artificial Intelligence</option>
 				<option value ="BSCIS">Computer Science</option>
-				<option value ="data-science">Data Science</option>
 				<option value ="BSSE">Software Engineering</option>
-				<option value ="cyber-security">Cybersecurity</option>
 				<option value ="BSECE">Computer Engineering</option>
 				<option value ="BSEEE">Electrical Engineering</option>
-				<option value ="Industrial-engineering">Industrial Engineering</option>
-				<option value ="BSEME">Manufacturing Engineering</option>
-				<option value ="mechanical-engineering">Mechanical Engineering</option>
-				<option value ="robotics-engineering">Robotics Engineering</option>
-				<option value ="human-centered-engineering-design">Human Centered Engineering Design</option>
+				<option value ="BSEISE">Industrial Systems Engineering</option>
+				<option value ="BSE-MFGE">Manufacturing Systems Engineering</option>
+				<option value ="BSEME">Mechanical Engineering</option>
 	  		</select>
 			<br>
 			

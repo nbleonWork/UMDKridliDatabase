@@ -48,7 +48,7 @@ header{
 
 .image-slide{
 	white-space: nowrap;
-	animation: 5s slide infinite linear;
+	animation: 20s slide linear infinite;
 }
 
 .image-slide img{
@@ -73,7 +73,7 @@ header{
 #degree, #year, #semester{
 	height:20px;
 	font-family: sans-serif;
-	color:#C5C4C4;
+	color:#000000;
 	background-color:#EFF0F1;
 	margin-bottom: 10px;
 }

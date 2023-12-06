@@ -63,24 +63,15 @@ $result = mysqli_query($con, $query);
 	  
 	  <label for="degree"></label>
 	  <select id="degree" name="degree">
-		  <option value ="none">Select Degree</option>
-		  <option value ="artificial-intelligence">Artificial Intelligence</option>
-		  <option value ="bioengineering">Bioengineering</option>
-		  <option value ="CMATH">CIS Mathematics</option>
-		  <option value ="engineering-mathematics">Engineering Mathematics</option>
-		  <option value ="artificial-intelligence">Artificial Intelligence</option>
-		  <option value ="BSCIS">Computer Science</option>
-		  <option value ="data-science">Data Science</option>
-		  <option value ="BSSE">Software Engineering</option>
-		  <option value ="cyber-security">Cybersecurity</option>
-		  <option value ="BSECE">Computer Engineering</option>
-		  <option value ="BSEEE">Electrical Engineering</option>
-		  <option value ="Industrial-engineering">Industrial Engineering</option>
-		  <option value ="BSEME">Manufacturing Engineering</option>
-		  <option value ="mechanical-engineering">Mechanical Engineering</option>
-		  <option value ="robotics-engineering">Robotics Engineering</option>
-		  <option value ="human-centered-engineering-design">Human Centered Engineering Design</option>
-		  
+		  		<option value ="none">Select Degree</option>
+				<option value ="CMATH">CIS Mathematics</option>
+				<option value ="BSCIS">Computer Science</option>
+				<option value ="BSSE">Software Engineering</option>
+				<option value ="BSECE">Computer Engineering</option>
+				<option value ="BSEEE">Electrical Engineering</option>
+				<option value ="BSEISE">Industrial Systems Engineering</option>
+				<option value ="BSE-MFGE">Manufacturing Systems Engineering</option>
+				<option value ="BSEME">Mechanical Engineering</option>
 	  </select>
 	  
 	  <label for="year"></label>
